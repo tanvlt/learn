@@ -9,8 +9,8 @@ do
 ##Get mail ID ########
 for msg in $(zmmailbox -z -m ${acct} s -l 7 -t message "From: networker@vietabank.com.vn Subject: REDMINE" | awk '{ print $2 }' | tail -n +6) ;
 do
-echo "Removing "$msg" from "$acct"";
-
+echo "Delete mail ID "$msg" from "$acct"";
+##Delete email
 zmmailbox -z -m "${acct}" dm "${msg}";
 done
 done
